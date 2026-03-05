@@ -1,0 +1,14 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "YouTube Scraper Output",
+    "description": "Scraped YouTube video data including titles, view counts, likes, comments, subtitles, channel info, and more.",
+    "type": "object",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Scraped Videos",
+            "description": "Dataset containing all scraped YouTube video records with metadata, statistics, and optionally subtitles.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}
