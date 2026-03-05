@@ -1,0 +1,28 @@
+{
+    "name": "youtube-scraper",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Apify Actor for scraping YouTube videos, channels, playlists, and search results using Crawlee and Apify SDK v3",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "main": "dist/main.js",
+    "scripts": {
+        "start": "npm run build && npm run start:prod",
+        "start:prod": "node dist/main.js",
+        "build": "tsc",
+        "dev": "tsx src/main.ts",
+        "lint": "tsc --noEmit"
+    },
+    "dependencies": {
+        "apify": "^3.2.6",
+        "crawlee": "^3.12.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.19.13",
+        "tsx": "^4.7.0",
+        "typescript": "~5.6.0"
+    },
+    "author": "",
+    "license": "ISC"
+}

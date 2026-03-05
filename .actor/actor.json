@@ -1,0 +1,56 @@
+{
+    "actorSpecification": 1,
+    "name": "youtube-scraper",
+    "title": "YouTube Scraper",
+    "description": "Scrape YouTube videos, channels, playlists, and search results. Extract video metadata, statistics, subtitles, and more.",
+    "version": "1.0.0",
+    "buildTag": "latest",
+    "input": "./INPUT_SCHEMA.json",
+    "dockerfile": "./Dockerfile",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "title": "YouTube Videos",
+            "description": "Scraped YouTube video data",
+            "views": {
+                "overview": {
+                    "title": "Overview",
+                    "transformation": {
+                        "fields": [
+                            "title",
+                            "videoId",
+                            "url",
+                            "viewCount",
+                            "likeCount",
+                            "commentsCount",
+                            "duration",
+                            "uploadDate",
+                            "channelName"
+                        ]
+                    },
+                    "display": {
+                        "component": "table",
+                        "properties": {
+                            "title": {
+                                "label": "Title",
+                                "format": "text"
+                            },
+                            "url": {
+                                "label": "URL",
+                                "format": "link"
+                            },
+                            "viewCount": {
+                                "label": "Views",
+                                "format": "number"
+                            },
+                            "channelName": {
+                                "label": "Channel",
+                                "format": "text"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
