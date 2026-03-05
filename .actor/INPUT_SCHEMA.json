@@ -1,0 +1,62 @@
+{
+    "title": "YouTube Scraper",
+    "description": "Scrape YouTube videos, channels, playlists, and search results. Extract titles, view counts, likes, comments, subtitles, and more.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "searchTerms": {
+            "title": "Search Terms",
+            "type": "array",
+            "description": "List of YouTube search keywords to scrape results for.",
+            "editor": "stringList",
+            "prefill": ["web scraping tutorial"],
+            "example": ["web scraping tutorial", "node.js crash course"]
+        },
+        "youtubeUrls": {
+            "title": "YouTube URLs",
+            "type": "array",
+            "description": "Direct YouTube video, channel, or playlist URLs to scrape.",
+            "editor": "stringList",
+            "prefill": [],
+            "example": [
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "https://www.youtube.com/@apaborern/videos",
+                "https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH"
+            ]
+        },
+        "maxResults": {
+            "title": "Maximum Results",
+            "type": "integer",
+            "description": "Maximum number of videos to scrape across all search terms and URLs.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 5000,
+            "prefill": 50
+        },
+        "scrapeSubtitles": {
+            "title": "Scrape Subtitles",
+            "type": "boolean",
+            "description": "Whether to extract video subtitles/captions (increases runtime).",
+            "default": false,
+            "prefill": false
+        },
+        "videoType": {
+            "title": "Video Type",
+            "type": "string",
+            "description": "Filter search results by video type.",
+            "enum": ["videos", "shorts", "streams", "all"],
+            "enumTitles": ["Videos", "Shorts", "Live Streams", "All Types"],
+            "default": "all",
+            "prefill": "all"
+        },
+        "dateFilter": {
+            "title": "Upload Date Filter",
+            "type": "string",
+            "description": "Filter search results by upload date.",
+            "enum": ["hour", "day", "week", "month", "year", "all"],
+            "enumTitles": ["Last Hour", "Today", "This Week", "This Month", "This Year", "Any Time"],
+            "default": "all",
+            "prefill": "all"
+        }
+    }
+}
